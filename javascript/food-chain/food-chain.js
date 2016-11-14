@@ -40,14 +40,11 @@ module.exports = class FoodChain {
 
     verse(from) {
         from--;
-        const song = this.chain
+        return this.chain
             .filter((step, i) => from === this.chain.length - 1 ? i === from : i <= from)
             .map((step, i) => this.getSongPart(step, i, from))
             .reverse()
-            .reduce((song, curr) => {
-                return song + curr;
-            }, '');
-        return song;
+            .reduce((song, curr) => song + curr, '');
     }
 
     verses(from, to) {
