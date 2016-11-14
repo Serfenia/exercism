@@ -4,8 +4,7 @@ module.exports = function DnaTranscriber() {
         toRna(dna) {
             return dna
                 .split('')
-                .map((c) => conversion[c])
-                .join('');
+                .reduce((v, c) => v + conversion[c], '')
         }
     }
 }
