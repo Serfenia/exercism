@@ -17,6 +17,10 @@ module.exports = class FoodChain {
         ];
     }
 
+    getChainRiddle(step) {
+        return step.hasOwnProperty('chainRiddle') ? step.chainRiddle : '.\n';
+    }
+
     getSongPart(step, i, from) {
         if (from === this.chain.length - 1) {
             return `I know an old lady who swallowed a ${step.beast}.\n${step.riddle}`;
@@ -25,16 +29,12 @@ module.exports = class FoodChain {
             if (i === 0) {
                 return str + 'I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n';
             } else {
-                return `${str}She swallowed the ${step.beast} to catch the ${step.eats}${
-                    step.hasOwnProperty('chainRiddle') ? step.chainRiddle : '.\n'
-                }`;
+                return `${str}She swallowed the ${step.beast} to catch the ${step.eats}${this.getChainRiddle(step)}`;
             }
         } else if (i === 0) {
             return `I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n`;
         } else {
-            return `She swallowed the ${step.beast} to catch the ${step.eats}${
-                step.hasOwnProperty('chainRiddle') ? step.chainRiddle : '.\n'
-            }`;
+            return `She swallowed the ${step.beast} to catch the ${step.eats}${this.getChainRiddle(step)}`;
         }
     }
 
