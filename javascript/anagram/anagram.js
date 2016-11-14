@@ -8,7 +8,7 @@ Anagram.prototype.sortChars = function(str) {
 };
 
 Anagram.prototype.matches = function (list) {
-    list = (typeof list !== 'string' ? list : Object.keys(arguments).map((k) => arguments[k]));
+    list = (typeof list !== 'string' ? list : [...arguments]);
     return list.filter((word) => {
         return this.sortChars(word.toLowerCase()) === this.strSorted
             && word.toLowerCase() !== this.str;
