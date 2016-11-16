@@ -7,7 +7,7 @@ module.exports = class Robot {
     }
 
     static getRandomChar() {
-        return String.fromCharCode(97 + Math.floor(Math.random() * 26)).toUpperCase();
+        return String.fromCharCode(65 + Math.floor(Math.random() * 26));
     }
 
     static getRandomNumber(min, max) {
