@@ -5,7 +5,6 @@ module.exports = class Triangle {
                 acc[curr] = acc[curr] ? acc[curr] + 1 : 1;
                 return acc;
             }, {})).length;
-
     }
 
     kind() {
