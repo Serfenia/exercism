@@ -3,8 +3,8 @@ import java.util.Arrays;
 
 
 public class Hamming {
-    String left;
-    String right;
+    private String left;
+    private String right;
 
     Hamming(String leftStrand, String rightStrand) {
         if (leftStrand.length() != rightStrand.length()) {
